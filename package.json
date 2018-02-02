@@ -6,6 +6,7 @@
   "author": "Roman Ivaskevych",
   "dependencies": {
     "gatsby": "latest",
+    "gatsby-cli": "^1.1.34",
     "gatsby-link": "latest",
     "gatsby-plugin-catch-links": "^1.0.14",
     "gatsby-plugin-react-helmet": "^2.0.4",
@@ -23,6 +24,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+	"preinstall": "npm i -g gatsby-cli@latest",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve"

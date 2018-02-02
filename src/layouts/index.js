@@ -11,30 +11,46 @@ const propTypes = {
 }
 
 class DefaultLayout extends React.Component {
-  componentDidMount () {
-    function calculateDistance (elem, mouseX, mouseY) {
-      const elemSizes = elem.getBoundingClientRect();
-      return Math.floor(
-        Math.sqrt(
-          Math.pow(mouseX - (elem.offsetLeft+(elemSizes.width/2)), 2) +
-          Math.pow(mouseY - (elem.offsetTop+(elemSizes.height/2)), 2)
-        )
-      );
-    };
+  constructor () {
+    super()
 
-    const element  = document.querySelector('#lock');
-
-    document.addEventListener("mousemove", function(e){
-      const mX = e.clientX;
-      const mY = e.clientY;
-      const distance = calculateDistance(element, mX, mY);
-      if(distance < 100) {
-        element.style.opacity = (100 - distance)/100;
-      } else if (distance > 100) {
-        element.style.opacity = '0.05';
-      }
-    });
+    this.element = null;
+    this.calculateDistance = this.calculateDistance.bind(this);
+    this.handleDistance = this.handleDistance.bind(this);
   }
+
+  calculateDistance = (elem, mouseX, mouseY) => {
+    const elemSizes = elem.getBoundingClientRect();
+
+    return Math.floor(
+      Math.sqrt(
+        Math.pow(mouseX - (elem.offsetLeft+(elemSizes.width/2)), 2) +
+        Math.pow(mouseY - (elem.offsetTop+(elemSizes.height/2)), 2)
+      )
+    );
+  };
+
+  handleDistance = (e) => {
+    const mX = e.clientX;
+    const mY = e.clientY;
+    const distance = this.calculateDistance(this.element, mX, mY);
+    if(distance < 100) {
+      this.element.style.opacity = (100 - distance)/100;
+    } else if (distance > 100) {
+      this.element.style.opacity = '0.05';
+    }
+  };
+
+  componentDidMount () {
+    this.element = document.querySelector('#lock');
+
+    window.addEventListener('mousemove', this.handleDistance);
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('mousemove', this.handleDistance);
+  };
+
   render() {
     const categories = this.props.data.allContentfulCategory.edges
     return (
