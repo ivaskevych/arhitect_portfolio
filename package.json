@@ -24,7 +24,11 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+<<<<<<< HEAD
 	"preinstall": "npm i -g gatsby-cli@latest",
+=======
+    "preinstall": "npm i -g gatsby-cli@latest",
+>>>>>>> 8081f08c1c093802682cd342461c0e3e57bc1969
     "develop": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve"
