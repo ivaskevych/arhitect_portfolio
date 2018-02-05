@@ -17,8 +17,7 @@ class CategoryTemplate extends React.Component {
     } = category
     return (
       <div className="post-list">
-        <Helmet title={`Ustyna Hnes | Porst in ${title}`} />
-        {/* <h1>Posts in {title} category</h1> */}
+        <Helmet title={`Ustyna Hnes | ${title}`} />
         {post.map((post) => (
           <Post node={post} key={post.id} />
         ))}

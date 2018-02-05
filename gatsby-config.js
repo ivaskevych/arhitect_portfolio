@@ -3,6 +3,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `Ustyna Hnes | Portfolio`,
+	  siteUrl: `https://ustyna-hnes.netlify.com`
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -17,6 +18,10 @@ module.exports = {
     },
     {
       resolve: `gatsby-transformer-remark`
-    }
+    },
+  	{
+  	  resolve: `gatsby-plugin-sitemap`
+  	},
+	  `gatsby-plugin-offline`
   ]
 }

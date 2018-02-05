@@ -16,7 +16,7 @@ class AuthorTemplate extends React.Component {
     } = author
     return (
       <div>
-        <Helmet title={`Ustyna Hnes | Posts by Author`} />
+        <Helmet title={`Ustyna Hnes | Posts by ${post.title.title}`} />
         <h2>Posts by {name}</h2>
         {post.map((post, index) =>
           <Link key={index} to={`/post/${post.id}/`}>

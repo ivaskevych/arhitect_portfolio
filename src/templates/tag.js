@@ -14,7 +14,7 @@ const TagTemplate = ({ pathContext }) => {
     return (
       <div className="post-list">
         <div className="description">Posts with {tag} tag:</div>
-        <Helmet title={`Ustyna Hnes | Posts with ${tag} tag`} />
+        <Helmet title={`Ustyna Hnes | ${tag}`} />
           {posts.map((post) => (
             <Post node={post} key={post.id} />
           ))}
