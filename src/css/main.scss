@@ -217,7 +217,8 @@ body {
     font-weight: 400;
     font-style: normal;
     text-rendering: optimizeLegibility;
-    font-family: "-apple-system",BlinkMacSystemFont,Arial,sans-serif
+    font-family: "-apple-system",BlinkMacSystemFont,Arial,sans-serif;
+    overflow-y: scroll;
 }
 
 img {
