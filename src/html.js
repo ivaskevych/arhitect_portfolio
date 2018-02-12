@@ -37,10 +37,6 @@ class Html extends React.Component {
 
           <meta name="referrer" content="origin" />
           <meta charSet="utf-8" />
-          <meta
-            name="description"
-            content="Architecture portfolio by Ustyna Hnes"
-          />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"
