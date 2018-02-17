@@ -6,6 +6,7 @@ module.exports = {
 	  siteUrl: `https://ustyna-hnes.netlify.com`
   },
   plugins: [
+    `gatsby-plugin-react-next`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
@@ -17,9 +18,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://ustyna-hnes.netlify.com`,
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-27965072-5",
+        anonymize: false
       },
     },
     {
@@ -49,6 +57,7 @@ module.exports = {
   	{
   	  resolve: `gatsby-plugin-sitemap`
   	},
-	  `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`
   ]
 }

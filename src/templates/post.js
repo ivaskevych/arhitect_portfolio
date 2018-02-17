@@ -1,4 +1,5 @@
 import React from "react"
+import Img from "gatsby-image"
 import Link from "gatsby-link"
 import Helmet from "react-helmet";
 import * as PropTypes from "prop-types"
@@ -32,16 +33,26 @@ class PostTemplate extends React.Component {
     const post = this.props.data.contentfulPost
     const { next, prev } = this.props.pathContext
     const {
+      id,
       title: { title },
       author,
-      body: { childMarkdownRemark: { html } },
+      description: { childMarkdownRemark: { html } },
+      images,
       category,
       tags,
       date
     } = post
     return (
       <div>
-        <Helmet title={`Ustyna Hnes | ${title}`} />
+        <Helmet>
+          <title>{title} | Ustyna Hnes</title>
+          <meta name="description" content={title} />
+          <meta property="og:title" content={title + " | Ustyna Hnes Portfolio"}/>
+          {/* <meta property="og:image" content={cover.sizes.src} />
+          <meta property="og:image:width" content="1800" />
+          <meta property="og:image:height" content="1200" /> */}
+          <meta property="og:url" content={"https://ustyna-hnes.netlify.com/post/" + id + "/"} />
+        </Helmet>
         {author.map(item => <Author key={item.id} author={item} date={date} />)}
         <div className="category">Category:&nbsp;
           {category.map((item, index) =>
@@ -53,6 +64,20 @@ class PostTemplate extends React.Component {
         <div className="post">
           <h1 className="title">{title}</h1>
           <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="post-images">
+            {images && (
+              images.map(image => (
+                <Img
+                  key={image.id}
+                  sizes={image.sizes}
+                  alt={image.title}
+                  title={image.title}
+                  outerWrapperClassName={image.description}
+                  backgroundColor={"#f1f1f1"}
+                />
+              ))
+            )}
+          </div>
         </div>
         <div>
           <ul className="tags">
@@ -99,16 +124,24 @@ export default PostTemplate
 export const pageQuery = graphql`
   query postQuery($id: String!) {
     contentfulPost(id: { eq: $id }) {
+      id
       title {
         title
       }
       tags
       date(formatString: "MMMM DD, YYYY")
-      body {
+      description {
         id
         childMarkdownRemark {
           id
           html
+        }
+      }
+      images {
+        id
+        title
+        sizes(maxWidth: 1800) {
+          ...GatsbyContentfulSizes_noBase64
         }
       }
       category {
