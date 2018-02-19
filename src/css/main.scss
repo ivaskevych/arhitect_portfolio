@@ -305,8 +305,24 @@ h3 {
   }
 }
 
+.headroom {
+    max-width: 53rem;
+    margin: 0 auto;
+    &--unfixed {
+      width: 100%;
+    }
+    &--unpinned {
+      width: 90%;
+    }
+    &--scrolled {
+      width: 90%;
+    }
+}
+
 .categories {
-  padding: 0;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 15px 15px 0;
   list-style: none;
   display: flex;
   justify-content: flex-start;

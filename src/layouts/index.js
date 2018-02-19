@@ -1,4 +1,5 @@
 import React from "react"
+import Headroom from "react-headroom"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
 import Logos from "../components/Logos";
@@ -74,30 +75,32 @@ class DefaultLayout extends React.Component {
             </svg>
           </div>
         </a>
-        <header className="header">
-          {/* #26A69A, gold */}
-          <Logos width="100" fill="#FFEB3B"/>
-          <Link className="logo-title" to="/">
-            Ustyna Hnes <sup>portfolio</sup>
-          </Link>
-        </header>
-        {/* navigation */}
-        <ul className="categories">
-          <li>
-            <Link activeClassName="active" exact to={`/`}>
-              Всі
+        <Headroom>
+          <header className="header">
+            {/* #26A69A, gold */}
+            <Logos width="100" fill="#FFEB3B"/>
+            <Link className="logo-title" to="/">
+              Ustyna Hnes <sup>portfolio</sup>
             </Link>
-          </li>
-          {
-            categories.map(category =>
-              <li key={category.node.id}>
-                <Link activeClassName="active" to={`/categories/${category.node.id}/`}>
-                  {category.node.title}
-                </Link>
-              </li>
-            )
-          }
-        </ul>
+          </header>
+          {/* navigation */}
+          <ul className="categories">
+            <li>
+              <Link activeClassName="active" exact to={`/`}>
+                Всі
+              </Link>
+            </li>
+            {
+              categories.map(category =>
+                <li key={category.node.id}>
+                  <Link activeClassName="active" to={`/categories/${category.node.id}/`}>
+                    {category.node.title}
+                  </Link>
+                </li>
+              )
+            }
+          </ul>
+        </Headroom>
         {this.props.children()}
       </main>
     )

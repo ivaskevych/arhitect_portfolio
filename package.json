@@ -22,6 +22,7 @@
     "gatsby-source-contentful": "latest",
     "gatsby-transformer-remark": "latest",
     "lodash": "^4.16.4",
+    "react-headroom": "^2.2.2",
     "react-helmet": "^5.2.0",
     "slash": "^1.0.0"
   },
