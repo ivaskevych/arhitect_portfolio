@@ -24,7 +24,9 @@
     "lodash": "^4.16.4",
     "react-headroom": "^2.2.2",
     "react-helmet": "^5.2.0",
-    "slash": "^1.0.0"
+    "scrollprogress": "^3.0.2",
+    "slash": "^1.0.0",
+    "smoothscroll-polyfill": "^0.4.0"
   },
   "keywords": [
     "architecture",

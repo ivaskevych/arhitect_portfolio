@@ -2,7 +2,7 @@ import React from "react"
 import Headroom from "react-headroom"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
-import Logos from "../components/Logos";
+import Logos from "../components/Logos"
 import * as PropTypes from "prop-types"
 
 import '../css/main.scss';
@@ -75,7 +75,7 @@ class DefaultLayout extends React.Component {
             </svg>
           </div>
         </a>
-        <Headroom>
+        <Headroom className="header-navigation">
           <header className="header">
             {/* #26A69A, gold */}
             <Logos width="100" fill="#FFEB3B"/>

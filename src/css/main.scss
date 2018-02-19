@@ -305,7 +305,8 @@ h3 {
   }
 }
 
-.headroom {
+.header-navigation {
+  .headroom {
     max-width: 53rem;
     margin: 0 auto;
     &--unfixed {
@@ -317,10 +318,12 @@ h3 {
     &--scrolled {
       width: 90%;
     }
+  }
 }
 
 .categories {
   background-color: #ffffff;
+  border-bottom: 1px solid #eee;
   margin: 0;
   padding: 15px 15px 0;
   list-style: none;
@@ -578,5 +581,52 @@ h3 {
     transition: opacity .3s ease;
   svg {
     fill: #81C784;
+  }
+}
+
+//Scroll Up Button
+.up-button {
+  cursor: pointer;
+  .progress {
+    background-color: #3e3e3e;
+    height: 4px;
+    top: 0;
+    z-index: 99999;
+    position: absolute;
+    margin-top: -4px;
+  }
+  .headroom-wrapper {
+    float: right;
+  }
+  .headroom {
+    z-index: 99;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: transform 200ms ease-in-out;
+    transform: translateY(0);
+    &--unfixed {
+      transform: translateY(100%);
+    }
+    &--unpinned {
+      position: fixed;
+      transform: translateY(100%);
+    }
+    &--pinned {
+      position: fixed;
+      transform: translateY(0);
+    }
+  }
+  .up-button__text {
+    font-size: 1em;
+    font-weight: bold;
+    background: white;
+    border-top: 1px solid #eeeeee;
+    padding: 1em;
+    color: #3e3e3e;
+    text-align: center;
+    position: relative;
+    z-index: 99;
   }
 }
