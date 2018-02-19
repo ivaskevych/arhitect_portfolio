@@ -15,13 +15,13 @@ const capitalize = (text) => {
 const TagTemplate = ({ pathContext }) => {
   const { posts, tag } = pathContext
   return (
-    <div className="post-list">
+    <section className="post-list">
       <Helmet title={`${capitalize(tag)} | Ustyna Hnes `} />
       <div className="description">Posts with {tag} tag:</div>
         {posts.map((post) => (
           <Post node={post} key={post.id} />
         ))}
-    </div>
+    </section>
   )
 }
 

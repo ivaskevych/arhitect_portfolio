@@ -11,7 +11,7 @@ class CategoriesTemplate extends React.Component {
   render() {
     const categories = this.props.data.allContentfulCategory.edges
     return (
-      <div className="post-list">
+      <section className="post-list">
         <Helmet title={`Categories | Ustyna Hnes`} />
         <div className="description">All categories:</div>
         <ul className="tags">
@@ -23,7 +23,7 @@ class CategoriesTemplate extends React.Component {
             </li>
           )}
         </ul>
-      </div>
+      </section>
     )
   }
 }

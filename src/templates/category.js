@@ -16,12 +16,12 @@ class CategoryTemplate extends React.Component {
       post
     } = category
     return (
-      <div className="post-list">
+      <section className="post-list">
         <Helmet title={`${title} | Ustyna Hnes`} />
         {post.map((post) => (
           <Post node={post} key={post.id} />
         ))}
-      </div>
+      </section>
     )
   }
 }

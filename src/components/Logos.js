@@ -199,7 +199,7 @@ class Logos extends Component {
       )
     }
     this.state = {
-      logo: this.icons['icon_5']
+      logo: null
     };
 
     this.clickHandler = this.clickHandler.bind(this);

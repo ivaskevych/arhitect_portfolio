@@ -11,11 +11,11 @@ class IndexPage extends React.Component {
   render() {
     const ukPostEdges = this.props.data.uk.edges
     return (
-      <div className="post-list">
+      <section className="post-list">
         {ukPostEdges.map(({ node }) => (
           <Post node={node} key={node.id} />
         ))}
-      </div>
+      </section>
     )
   }
 }

@@ -16,13 +16,13 @@ class AuthorTemplate extends React.Component {
       post
     } = author
     return (
-      <div className="post-list">
+      <section className="post-list">
         <Helmet title={`Posts by ${name} | Ustyna Hnes`} />
         <div className="description">Posts by {name}</div>
         {post.map((post) => (
           <Post node={post} key={post.id} />
         ))}
-      </div>
+      </section>
     )
   }
 }

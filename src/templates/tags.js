@@ -10,7 +10,7 @@ const propTypes = {
 const TagsTemplate = ({ pathContext }) => {
   const { tags } = pathContext
   return (
-    <div className="post-list">
+    <section className="post-list">
       <Helmet title={`Tags | Ustyna Hnes`} />
       <div className="description">All tags:</div>
       <ul className="tags">
@@ -22,7 +22,7 @@ const TagsTemplate = ({ pathContext }) => {
             </li>
         )}
       </ul>
-    </div>
+    </section>
   )
 }
 
