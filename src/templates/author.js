@@ -1,6 +1,7 @@
 import React from "react"
 import Link from "gatsby-link"
 import Helmet from "react-helmet";
+import Post from "../components/Post"
 import * as PropTypes from "prop-types"
 
 const propTypes = {
@@ -15,14 +16,12 @@ class AuthorTemplate extends React.Component {
       post
     } = author
     return (
-      <div>
-        <Helmet title={`Ustyna Hnes | Posts by ${name}`} />
-        <h2>Posts by {name}</h2>
-        {post.map((post, index) =>
-          <Link key={index} to={`/post/${post.id}/`}>
-            <div>{post.title.title}</div>
-          </Link>
-        )}
+      <div className="post-list">
+        <Helmet title={`Posts by ${name} | Ustyna Hnes`} />
+        <div className="description">Posts by {name}</div>
+        {post.map((post) => (
+          <Post node={post} key={post.id} />
+        ))}
       </div>
     )
   }
@@ -38,6 +37,7 @@ export const authorQuery = graphql`
       name
       post {
         id
+        date(formatString: "MMMM DD, YYYY")
         title {
           id
           title

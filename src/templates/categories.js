@@ -12,7 +12,7 @@ class CategoriesTemplate extends React.Component {
     const categories = this.props.data.allContentfulCategory.edges
     return (
       <div className="post-list">
-        <Helmet title={`Ustyna Hnes | Categories`} />
+        <Helmet title={`Categories | Ustyna Hnes`} />
         <div className="description">All categories:</div>
         <ul className="tags">
           {categories.map(category =>

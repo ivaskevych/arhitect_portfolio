@@ -42,8 +42,8 @@ class ScrollToTop extends React.Component {
 
     return (
       <div className="up-button" onClick={scrollUp}>
+        <div className="progress" style={progressStyle} />
         <Headroom disableInlineStyles pinStart={300}>
-          <div className="progress" style={progressStyle} />
           <div className="up-button__text">Back To Top</div>
         </Headroom>
       </div>

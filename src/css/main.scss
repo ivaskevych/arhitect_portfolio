@@ -590,10 +590,11 @@ h3 {
   .progress {
     background-color: #3e3e3e;
     height: 4px;
-    top: 0;
+    left: 0;
+    bottom: 0;
     z-index: 99999;
-    position: absolute;
-    margin-top: -4px;
+    position: fixed;
+    margin: 0;
   }
   .headroom-wrapper {
     float: right;

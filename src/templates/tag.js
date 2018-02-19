@@ -8,19 +8,21 @@ const propTypes = {
   pathContext: PropTypes.object.isRequired,
 }
 
+const capitalize = (text) => {
+  return `${text.slice(0, 1).toUpperCase()}${text.slice(1)}`
+}
+
 const TagTemplate = ({ pathContext }) => {
   const { posts, tag } = pathContext
-  if (posts) {
-    return (
-      <div className="post-list">
-        <div className="description">Posts with {tag} tag:</div>
-        <Helmet title={`Ustyna Hnes | ${tag}`} />
-          {posts.map((post) => (
-            <Post node={post} key={post.id} />
-          ))}
-      </div>
-    )
-  }
+  return (
+    <div className="post-list">
+      <Helmet title={`${capitalize(tag)} | Ustyna Hnes `} />
+      <div className="description">Posts with {tag} tag:</div>
+        {posts.map((post) => (
+          <Post node={post} key={post.id} />
+        ))}
+    </div>
+  )
 }
 
 TagTemplate.propTypes = propTypes

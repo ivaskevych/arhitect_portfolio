@@ -58,7 +58,7 @@ class DefaultLayout extends React.Component {
       <main className="container">
         <Helmet>
             <meta charSet="utf-8" />
-            <title>{`Ustyna Hnes | Portfolio`}</title>
+            <title>{`Portfolio | Ustyna Hnes`}</title>
             <meta name="description" content="I am an architect. I work on architectural projects, interior design, 3D modelling and concept projects. I use Bentley Microstation for modelling and drawings, 3ds MAX for rendering and Photoshop for image processing."/>
         </Helmet>
         <a href="https://be.contentful.com/login" target="_blank" rel="noopener">
